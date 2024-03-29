@@ -34,20 +34,10 @@ just install
 ```
 After cloning the repository and navigating into the project directory, follow these steps to initialize the project and start using the LotteryCandy game.
 
-## Installation and Setup
-
-After cloning the repository and navigating into the project directory, follow these steps to initialize the project and start using the LotteryCandy game.
-
-csharp
-Copy code
-## Installation and Setup
-
-After cloning the repository and navigating into the project directory, follow these steps to initialize the project and start using the LotteryCandy game.
-
 ### Initialize Project
 
 To set up your environment and initialize the game, run the following commands:
-
+```bash
 echo "Running the full E2E flow..."
 just set-contracts optimism XCounter false && just set-contracts base XCounter false
 just deploy optimism base
@@ -55,8 +45,7 @@ just sanity-check
 just create-channel
 just send-packet optimism
 echo "You've done it!"
-vbnet
-Copy code
+```
 
 This script performs a series of actions to prepare your project for use:
 
@@ -69,14 +58,12 @@ This script performs a series of actions to prepare your project for use:
 ### Initiate Game
 
 To start the game and allow users to participate, use the `init-game` script:
-
+```bash
 echo "Script running init game..."
 just deploy optimism base
 just sanity-check
 just create-channel
-
-vbnet
-Copy code
+```
 
 This prepares the game for a new round by deploying contracts, checking the system's sanity, and establishing the necessary communication channels.
 
@@ -85,36 +72,29 @@ This prepares the game for a new round by deploying contracts, checking the syst
 ### Start Game
 
 To begin a game round, specifying the number of challenges and whether to force start, execute:
-
+```bash
 echo "Script running starting game..."
 numberOfChallenge={NUMBER_OF_CHALLENGE} forceStart={FORCE_START} npx hardhat run games/start-game.js --network base
-
-css
-Copy code
-
+```
 Replace `{NUMBER_OF_CHALLENGE}` and `{FORCE_START}` with the desired number of challenges and a boolean value to force start the game, respectively.
 
 ### Send Direction
 
 To participate in the game by sending a packet in a specific direction, use:
-
+```bash
 echo "Script running sending direction..."
 npx hardhat run games/send-direction.js --network {FROM}
-
-vbnet
-Copy code
+```
 
 Replace `{FROM}` with the network from which you're sending the packet (e.g., `optimism`).
 
 ## Get Top 3 Users
 
 After the game round concludes, to retrieve the top 3 winners, execute:
-
+```bash
 echo "Script running get winners..."
 npx hardhat run games/get-winners.js --network {IN_CHAIN}
-
-csharp
-Copy code
+```
 
 Replace `{IN_CHAIN}` with the chain on which you want to query for winners (e.g., `base`).
 
