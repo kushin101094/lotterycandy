@@ -81,6 +81,12 @@ do-it:
     just send-packet optimism
     echo "You've done it!"
 
+init-game:
+    echo "Script running init game..."
+    just deploy optimism base
+    just sanity-check
+    just create-channel
+
 start-game NUMBER_OF_CHALLENGE FORCE_START:
     echo "Script running starting game..."
     numberOfChallenge={{NUMBER_OF_CHALLENGE}} forceStart={{FORCE_START}} npx hardhat run games/start-game.js --network base
