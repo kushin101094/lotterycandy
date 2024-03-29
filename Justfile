@@ -81,6 +81,18 @@ do-it:
     just send-packet optimism
     echo "You've done it!"
 
+start-game NUMBER_OF_CHALLENGE FORCE_START:
+    echo "Script running starting game..."
+    numberOfChallenge={{NUMBER_OF_CHALLENGE}} forceStart={{FORCE_START}} npx hardhat run games/start-game.js --network base
+
+send-direction FROM:
+    echo "Script running sending direction..."
+    npx hardhat run games/send-direction.js --network {{FROM}}
+
+get-winners IN_CHAIN:
+    echo "Script running get winners..."
+    npx hardhat run games/get-winners.js --network {{IN_CHAIN}}
+
 # Clean up the environment by removing the artifacts and cache folders and running the forge clean command
 # Usage: just clean
 clean:
