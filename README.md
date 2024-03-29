@@ -32,7 +32,7 @@ Optimism-Base Lottery Game is a decentralized application (dApp) designed to pro
 ### Installation
 
 1. Clone this repository to your local machine.
-git clone https://github.com/yourusername/optimism-base-lottery-game.git
+git clone https://github.com/kushin101094/lotterycandy.git
 
 markdown
 Copy code
