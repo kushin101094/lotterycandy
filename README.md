@@ -32,8 +32,9 @@ After cloning the repo, install dependencies:
 ```bash
 just install
 ```
-## Usage: just do-it
+#### Usage: just do-it
 do-it:
+```bash
     echo "Running the full E2E flow..."
     just set-contracts optimism XCounter false && just set-contracts base XCounter false
     just deploy optimism base
@@ -41,25 +42,29 @@ do-it:
     just create-channel
     just send-packet optimism
     echo "You've done it!"
-
+```
 init-game:
+```bash
     echo "Script running init game..."
     just deploy optimism base
     just sanity-check
     just create-channel
-
+```
 start-game NUMBER_OF_CHALLENGE FORCE_START:
+```bash
     echo "Script running starting game..."
     numberOfChallenge={{NUMBER_OF_CHALLENGE}} forceStart={{FORCE_START}} npx hardhat run games/start-game.js --network base
-
+```
 send-direction FROM:
+```bash
     echo "Script running sending direction..."
     npx hardhat run games/send-direction.js --network {{FROM}}
-
+```
 get-winners IN_CHAIN:
+```bash
     echo "Script running get winners..."
     npx hardhat run games/get-winners.js --network {{IN_CHAIN}}
-
+```
 ### How to Play
 
 1. Connect your Web3 wallet to LotteryCandy through the dApp interface.
