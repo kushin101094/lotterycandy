@@ -13,81 +13,82 @@
   @DuNGuyen1003 - Developer
 ## Overview
 
-Optimism-Base Lottery Game is a decentralized application (dApp) designed to provide a fun and competitive lottery experience, utilizing the power of blockchain technology to ensure transparency and fairness. This game allows users to send packets between Optimism and the Base chain via a custom channel, with the goal of achieving the shortest transmission time. After a specified period, the contract owner announces the top 3 winners who have managed to send their packets in the least amount of time.
+LotteryCandy is a decentralized lottery game built on the blockchain, allowing users to participate in a unique and transparent lottery experience. Utilizing a custom communication channel, players can send packets between the Optimism layer and the Base chain, competing to achieve the fastest transmission times. After a predetermined period, the game will conclude, and the top 3 players with the quickest times will be declared winners.
 
 ## Features
 
-- **Packet Sending:** Users can send packets from Optimism to the Base chain, utilizing a custom communication channel designed for efficiency and speed.
-- **Leaderboard:** The dApp automatically updates a leaderboard displaying users with the shortest packet transmission times, fostering a competitive environment.
-- **Transparent Selection:** The selection of winners is conducted in a transparent manner, with the smart contract code available for public review.
-- **Reward Distribution:** Winners are rewarded with prizes, distributed automatically by the smart contract upon the conclusion of each lottery round.
+- **Custom Packet Sending:** Engage in a unique lottery game by sending packets from Optimism to the Base chain and vice versa, aiming for the lowest transmission time.
+- **Competitive Leaderboard:** Keep track of your ranking and compete against others in real-time as you strive for the top positions.
+- **Transparent and Fair:** All transactions and results are recorded on the blockchain, ensuring a fair and transparent process.
+- **Automatic Prizes:** Winners are automatically awarded prizes directly through smart contracts, ensuring immediate and secure distribution.
 
 ## Getting Started
 
 ### Prerequisites
 
-- MetaMask or any other compatible Web3 wallet installed.
-- Sufficient ETH in Optimism for transaction fees and packet sending.
+- Ensure you have a Web3 wallet like MetaMask installed for interaction with the blockchain.
+- Have a sufficient balance of ETH on Optimism for transaction fees and participating in the game.
 
-### Installation
+### Installation and Setup
 
-1. Clone this repository to your local machine.
+1. Clone the repository to your local environment.
 git clone https://github.com/kushin101094/lotterycandy.git
+
+csharp
+Copy code
+
+2. Navigate into the project directory.
+cd lotterycandy
 
 markdown
 Copy code
 
-2. Install the necessary dependencies.
-cd optimism-base-lottery-game
+3. Install dependencies.
 npm install
 
 markdown
 Copy code
 
-3. Compile the smart contracts.
+4. Compile the smart contracts.
 truffle compile
 
 css
 Copy code
 
-4. Deploy the contracts to the Optimism and Base chain.
+5. Deploy the contracts to the desired networks.
 truffle migrate --network optimism
 truffle migrate --network base
 
 vbnet
 Copy code
 
-### Usage
+### How to Play
 
-To participate in the lottery game, follow these steps:
-
-1. Connect your Web3 wallet to the dApp.
-2. Send a packet from Optimism to the Base chain using the dApp's interface.
-3. Monitor the leaderboard for real-time updates on your ranking.
-4. Wait for the lottery round to conclude and for the winners to be announced.
+1. Connect your Web3 wallet to LotteryCandy through the dApp interface.
+2. Use the dApp to send a packet from Optimism to the Base chain.
+3. Your transmission time will be recorded and displayed on the leaderboard.
+4. At the end of the competition period, check if you're among the top 3 for prize distribution.
 
 ## Smart Contracts
 
-The core logic of the Optimism-Base Lottery Game is implemented in Solidity smart contracts. Below is a high-level overview of the main contracts:
+The LotteryCandy game logic is encapsulated within several Solidity smart contracts:
 
 ### PacketSender.sol
 
-- Handles the logic for users to send packets between Optimism and the Base chain.
-- Records the timestamps of each packet transmission.
+- Manages the packet sending functionality, tracking the timings of each transmission.
 
-### LotteryManager.sol
+### GameLogic.sol
 
-- Manages the game rounds, including starting and ending each round.
-- Calculates the top 3 shortest transmission times and declares the winners.
+- Controls the game's logic, including the timing and calculation of winners based on their performance.
 
-### RewardDistributor.sol
+### PrizeDistribution.sol
 
-- Distributes rewards to the winners based on their rankings.
+- Handles the distribution of rewards to the game's winners in a transparent and secure manner.
 
 ## Contributing
 
-Contributions are welcome! Please read our [Contributing Guide](CONTRIBUTING.md) for more information on how to contribute.
+We welcome contributions from the community! Please refer to our contributing guidelines for more information on how you can contribute to LotteryCandy.
 
 ## License
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+LotteryCandy is open source and available under the MIT License. See the [LICENSE](LICENSE)
