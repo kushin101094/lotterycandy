@@ -32,18 +32,33 @@ After cloning the repo, install dependencies:
 ```bash
 just install
 ```
-And add your private key to the .env file (rename it from .env.example).
+## Usage: just do-it
+do-it:
+    echo "Running the full E2E flow..."
+    just set-contracts optimism XCounter false && just set-contracts base XCounter false
+    just deploy optimism base
+    just sanity-check
+    just create-channel
+    just send-packet optimism
+    echo "You've done it!"
 
-Then make sure that the config has the right contracts:
+init-game:
+    echo "Script running init game..."
+    just deploy optimism base
+    just sanity-check
+    just create-channel
 
-```bash
-just set-contracts optimism Raffle && \
-just set-contracts base RaffleNFT
-```
-Compile Contracts:
-```bash
-just compile
-```
+start-game NUMBER_OF_CHALLENGE FORCE_START:
+    echo "Script running starting game..."
+    numberOfChallenge={{NUMBER_OF_CHALLENGE}} forceStart={{FORCE_START}} npx hardhat run games/start-game.js --network base
+
+send-direction FROM:
+    echo "Script running sending direction..."
+    npx hardhat run games/send-direction.js --network {{FROM}}
+
+get-winners IN_CHAIN:
+    echo "Script running get winners..."
+    npx hardhat run games/get-winners.js --network {{IN_CHAIN}}
 
 ### How to Play
 
