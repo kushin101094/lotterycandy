@@ -1,27 +1,27 @@
 {
   "proofsEnabled": false,
   "deploy": {
-    "optimism": "XCounterUC",
-    "base": "XCounterUC"
+    "optimism": "LotteryCandy",
+    "base": "LotteryCandy"
   },
-  "isUniversal": true,
+  "isUniversal": false,
   "createChannel": {
     "srcChain": "optimism",
-    "srcAddr": "0x1234567890AbCdEf1234567890aBcDeF12345678",
+    "srcAddr": "0xEe2cD37532A541D40B1F9C3A01Abe5D436448F4f",
     "dstChain": "base",
-    "dstAddr": "0x1234567890AbCdEf1234567890aBcDeF12345678",
+    "dstAddr": "0xAa37dBA1A09446C58cE36D63bFb806CDb697259D",
     "version": "1.0",
     "ordering": 0,
     "fees": false
   },
   "sendPacket": {
     "optimism": {
-      "portAddr": "0x1234567890abcdef1234567890abcdef12345678",
+      "portAddr": "0xEe2cD37532A541D40B1F9C3A01Abe5D436448F4f",
       "channelId": "channel-n",
       "timeout": 36000
     },
     "base": {
-      "portAddr": "0x1234567890abcdef1234567890abcdef12345678",
+      "portAddr": "0xAa37dBA1A09446C58cE36D63bFb806CDb697259D",
       "channelId": "channel-n",
       "timeout": 36000
     }
